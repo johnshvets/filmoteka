@@ -1,2 +1,2 @@
 import './styles.css';
-import './local-storage';
+import './components/local-storage';
