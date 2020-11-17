@@ -39,6 +39,7 @@ module.exports = env => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: './index.html',
       minify: {
         collapseWhitespace: true,
@@ -48,6 +49,19 @@ module.exports = env => ({
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true,
       },
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'library.html',
+      template: './library.html',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+      },
+      chunks: ['library'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
