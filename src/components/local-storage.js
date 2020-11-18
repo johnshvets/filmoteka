@@ -1,4 +1,4 @@
-import tamplate from './templates.hbs';
+// import tamplate from './templates.hbs';
 // обьект для примера
 const movieObj1 = {
   name: 'film1',
@@ -28,6 +28,8 @@ function addToQueue() {
   }
   localStorage.setItem('queueMovieArr', JSON.stringify(queueMovieArr));
   changeAddBtnTextContent();
+  //добавление класса
+  addToQueueMovieBtn.classList.toggle('delete-movie');
 }
 function addToWatched() {
   let watchedMovieArr = [];
@@ -42,11 +44,12 @@ function addToWatched() {
   }
   localStorage.setItem('watchedMovieArr', JSON.stringify(watchedMovieArr));
   changeAddBtnTextContent();
+  //добавление класса
+  addToWatchedMovieBtn.classList.toggle('delete-movie');
 }
-// функция изменения текстконтента кнопок
+// функция изменения текстконтента и цсс класса кнопок
 function changeAddBtnTextContent() {
   let localStorageQueueData = localStorage.getItem('queueMovieArr');
-
   if (localStorageQueueData === null) {
     addToQueueMovieBtn.textContent = 'Add to queue';
   }
@@ -57,9 +60,8 @@ function changeAddBtnTextContent() {
   } else {
     addToQueueMovieBtn.textContent = 'Add to queue';
   }
-  //--------------------------------------
+  //---------кнопка "Add to watched"
   let localStorageWatchedData = localStorage.getItem('watchedMovieArr');
-
   if (localStorageWatchedData === null) {
     addToWatchedMovieBtn.textContent = 'Add to watched';
   }
@@ -72,13 +74,13 @@ function changeAddBtnTextContent() {
   }
 }
 // функция примерного рендера библиотеки
-function renderLibraryMarkup(data) {
-  const localStorageData = JSON.parse(localStorage.getItem(data));
-  localStorageData.map(el => {
-    console.log(el);
-    const body = document.querySelector('body');
-    const movieCard = tamplate(el);
-    body.insertAdjacentHTML('afterbegin', movieCard);
-  });
-}
-renderLibraryMarkup('watchedMovieArr');
+// function renderLibraryMarkup(data) {
+//   const localStorageData = JSON.parse(localStorage.getItem(data));
+//   localStorageData.map(el => {
+//     console.log(el);
+//     const body = document.querySelector('body');
+//     const movieCard = tamplate(el);
+//     body.insertAdjacentHTML('afterbegin', movieCard);
+//   });
+// }
+// renderLibraryMarkup('watchedMovieArr');
