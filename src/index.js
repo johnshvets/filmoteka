@@ -1,4 +1,5 @@
 import './styles.css';
+import './js/modal';
 import './css/loader.css';
 import './css/styles.css';
 import MovieApiService from './api/apiService';
