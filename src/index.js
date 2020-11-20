@@ -1,11 +1,11 @@
 import './styles.css';
+import './css/styles.css';
 import './js/modal';
 import './css/loader.css';
-import './css/styles.css';
 import MovieApiService from './api/apiService';
 import createMovieCardsTPL from './templates/movie-card.hbs';
 
-const mainContent = document.querySelector('main');
+const mainContent = document.querySelector('.main-js');
 const movieSearcher = new MovieApiService();
 
 getMovies();
@@ -21,7 +21,7 @@ async function getMovies() {
       movieSearcher.fetchTrendingMovies.bind(movieSearcher),
       setPage,
     );
-
+    console.log(movies);
     mainContent.innerHTML = createMovieCardsTPL(movies);
   } catch (error) {
     console.log(error);
