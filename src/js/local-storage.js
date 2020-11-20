@@ -52,7 +52,6 @@ function addToWatched() {
 // проверка актуальности текстконтента кнопок
 //-----------Queued--------
 let localStorageQueuedData = localStorage.getItem('queueMovieArr');
-console.log(JSON.parse(localStorageQueuedData).length === 0);
 if (JSON.parse(localStorageQueuedData).length > 0) {
   addToQueueMovieBtn.textContent = 'Delete from Queue';
   addToQueueMovieBtn.classList.add('delete-movie');
