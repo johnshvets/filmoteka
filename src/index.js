@@ -2,7 +2,7 @@ import './styles.css';
 import './css/styles.css';
 import './js/modal';
 import './css/loader.css';
-import './js/library-watched-queue';
+// import './js/library-watched-queue';
 import MovieApiService from './api/apiService';
 import createMovieCardsTPL from './templates/movie-card.hbs';
 
@@ -28,4 +28,3 @@ async function getMovies() {
     console.log(error);
   }
 }
-
