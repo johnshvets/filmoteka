@@ -1,0 +1,48 @@
+<!-- Модалка -->
+
+<div class="lightbox_image">
+    <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" data-id="{{id}}" class="film-image" />
+</div>
+
+<div class="ligthbox_info">
+    <h2 class="film-title">{{title}}</h2>
+    <ul class="film-list">
+        <li class="film-item">
+            <p class="film-item__about">Vote / Votes</p>
+            <p class="film-item__description">
+                <span class="film-item__vote">{{vote_average}}</span>
+                <span style="color: #8C8C8C">/</span>
+                <span class="film-item__votes">{{vote_count}}</span>
+            </p>
+        </li>
+        <li class="film-item">
+            <p class="film-item__about">Popularity</p>
+            <p class="film-item__description">{{popularity}}</p>
+        </li>
+        <li class="film-item">
+            <p class="film-item__about">Original Title</p>
+            <p class="film-item__description">{{original_title}}</p>
+        </li>
+        <li class="film-item">
+            <p class="film-item__about">Genre</p>
+            <p class="film-item__description">{{#each genre_ids}}
+                <span class="film-item__genre">{{name}}</span>
+                {{/each}}
+            </p>
+        </li>
+        <li class="film-item">
+            <p class="film-item__about">Popularity</p>
+            <p class="film-item__description">{{popularity}}</p>
+        </li>
+    </ul>
+    <p class="film-description__title">About</p>
+    <p class="film-description__about">{{overview}}</p>
+
+    <div class="film-buttons">
+        <button data-name="watched" data-id="{{id}}" class="modal-btn film-buttons__watched" type="button">Add
+            to
+            watched</button>
+        <button data-name="queue" data-id="{{id}}" class="modal-btn film-buttons__queue" type="button">Add to
+            queue</button>
+    </div>
+</div>
