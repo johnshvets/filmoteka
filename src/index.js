@@ -1,11 +1,15 @@
 import './styles.css';
-import './js/modal';
+import { onOpenModal } from './js/modal';
 import './css/loader.css';
 import './css/styles.css';
 import MovieApiService from './api/apiService';
 import createMovieCardsTPL from './templates/movie-card.hbs';
 
 const mainContent = document.querySelector('main');
+// const mainFilmContainer = document.querySelector('.movies-list');
+
+mainContent.addEventListener('click', onOpenModal);
+
 const movieSearcher = new MovieApiService();
 
 

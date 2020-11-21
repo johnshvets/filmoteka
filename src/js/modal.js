@@ -1,7 +1,6 @@
 import '../css/modal.css';
 import Api from '../api/apiService';
 import filmCardTpl from "../templates/modal.hbs";
-import mainMovieCardTpl from "../templates/movie-card.hbs"
 // подвязка к кнопке на боди просто для примера (удалить)
 
 const refs = {
@@ -11,32 +10,42 @@ const refs = {
     overlay: document.querySelector('.lightbox_overlay'),
     filmInfo: document.querySelector('.lightbox_content'),
     body: document.querySelector('body'),
-    mainFilmContainer: document.querySelector('.container'),
+    // mainFilmContainer: document.getElementsByClassName('.movie-picture')
+    
 }
 
-refs.mainFilmContainer.addEventListener('click', onOpenModal);
+// console.log(refs.mainFilmContainer);
+
+// refs.mainFilmContainer.addEventListener('click', onOpenModal);
 
 const instance = new Api();
 
-export function onOpenModal() {
-            getMovie(id);  //???????
-    OnOpenModalbyImgClick();
+export function onOpenModal(e) {
+
+    // e.preventDefault();
+
+    if (e.target.tagName !== 'IMG') {
+        return
+    }
+
+    const id = e.target.dataset.id;
+    getMovie(id); 
+    
     refs.modalWindow.classList.add('is-open');
     refs.modalClose.addEventListener('click', onCloseModal);
     refs.overlay.addEventListener('click', onCloseClickOverlay);
     window.addEventListener("keydown", onCloseEscPress);
 
 }
-    
 
 
-function OnOpenModalbyImgClick(e) {
+// function OnOpenModalbyImgClick(e) {
 
-    if (e.target.tagName === 'IMG') {
-        onOpenModal(e.target.dataset.id)
-    }
+//     if (e.target.tagName === 'IMG') {
+//         onOpenModal(e.target.dataset.id)
+//     }
 
-}
+// }
 
 
 function renderModal(movie) {
