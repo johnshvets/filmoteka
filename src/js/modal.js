@@ -1,54 +1,46 @@
 import '../css/modal.css';
+import Api from '../api/apiService';
 import filmCardTpl from "../templates/modal.hbs";
+import mainMovieCardTpl from "../templates/movie-card.hbs"
 // подвязка к кнопке на боди просто для примера (удалить)
 
 const refs = {
-    modalOpen: document.querySelector('.show-modal'),
+    // modalOpen: document.querySelector('.show-modal'),
     modalClose: document.querySelector('.lightbox_button'),
     modalWindow: document.querySelector('.js-lightbox'),
     overlay: document.querySelector('.lightbox_overlay'),
     filmInfo: document.querySelector('.lightbox_content'),
-    body: document.querySelector('body')
+    body: document.querySelector('body'),
+    mainFilmContainer: document.querySelector('.container'),
 }
 
-refs.modalOpen.addEventListener('click', onOpenModal);
+refs.mainFilmContainer.addEventListener('click', onOpenModal);
 
-// let currentId = 1;
-// let idForLocalStorage = 1;
+const instance = new Api();
 
-
-function fetchFilms(id) {
-    const API_KEY = 'd3b4e2b6590fadf64c27140207cd1cc0';
-
-    return fetch(` https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`,)
-        .then(r => r.json());
-}
-
-    
-
-export function onOpenModal(id) {
-    // refs.body.classList.add('modal-open');
+export function onOpenModal() {
+            getMovie(id);  //???????
+    OnOpenModalbyImgClick();
     refs.modalWindow.classList.add('is-open');
     refs.modalClose.addEventListener('click', onCloseModal);
     refs.overlay.addEventListener('click', onCloseClickOverlay);
     window.addEventListener("keydown", onCloseEscPress);
+
+}
     
-    // renderModal();
+
+
+function OnOpenModalbyImgClick(e) {
+
+    if (e.target.tagName === 'IMG') {
+        onOpenModal(e.target.dataset.id)
+    }
+
 }
 
-// function getCurrentId(id) {
-//     const getFilmInfo = pullData();
-//     currentId;
-//     getFilmInfo.forEach((el) => {
-//         if (el.id === Number(id)) {
-//             currentId = el;
-//         }
-//     });
-//     showModal(currentId);
-// }
 
-function renderModal(film) {
-    const markup = filmCardTpl(film);
+function renderModal(movie) {
+    const markup = filmCardTpl(movie);
     refs.filmInfo.innerHTML = markup;
     let addToWatching = 0;
     let addToQueue = 0;
@@ -99,4 +91,9 @@ function onCloseClickOverlay(evt) {
     if (evt.currentTarget === evt.target) {
         onCloseModal();
     }
+}
+
+async function getMovie(id) {
+    const movie = await instance.fetchMovieByID(id);
+    renderModal(movie);
 }

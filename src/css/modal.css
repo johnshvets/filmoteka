@@ -7,7 +7,22 @@ body {
   min-height: 100%;
   margin: 0;
   color: white;
-  text-align: center;
+}
+
+@media screen and (min-width: 319px) {
+  .conteiner {
+    width: 320px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .conteiner {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .conteiner {
+    width: 1024px;
+  }
 }
 
 /* этот стиль для кнопки-примера - удалить */
@@ -28,15 +43,15 @@ body {
 /*  Modal  */
 
 .lightbox {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
   opacity: 0;
+  overflow-y: scroll;
   pointer-events: none;
   transition: opacity 200ms linear;
   transition: opacity var(--animation-duration) var(--timing-function);
@@ -48,18 +63,22 @@ body {
 }
 
 .lightbox_overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 12, 2, 0.8);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  z-index: 11;
+  overflow-y: scroll;
 }
 
 .lightbox_button {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 15px;
+  right: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,26 +104,245 @@ body {
   background-color: rgba(255, 107, 1, 0.7);
 }
 
+@media screen and (max-width: 767px) {
+  .lightbox_button {
+    top: 5px;
+    right: 5px;
+  }
+}
+
 .lightbox_content {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #e5e5e5;
-  width: 800px;
-  height: 600px;
-  top: 15%;
-  left: 22%;
+
   transform: scale(0.9);
   transition: transform 200ms ease-in-out;
   transform: scale(0.95);
   transition: transform var(--animation-duration) var(--timing-function);
 }
 
+@media screen and (min-width: 1025px) {
+  .lightbox_content {
+    width: 1100px;
+    height: 600px;
+    top: 10%;
+    left: 11%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .lightbox_content {
+    width: 980px;
+    height: 600px;
+    top: 10%;
+    left: 8%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .lightbox_content {
+    width: 760px;
+    height: 500px;
+    top: 10%;
+    left: 8%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .lightbox_content {
+    width: 320px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    top: 10%;
+    left: 10%;
+  }
+}
+
 .lightbox.is-open .lightbox_content {
   transform: scale(1);
+}
+
+/* .lightbox_image {
+  width: 426px;
+  height: 514px;
+  margin-left: 50px;
+  margin-right: 30px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+} */
+
+/* @media screen and (min-width: 319px) {
+  .lightbox_image {
+    width: 280px;
+    height: 416px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+} */
+
+@media screen and (min-width: 1024px) {
+  .lightbox_image img {
+    width: 426px;
+    height: 514px;
+    margin-left: 50px;
+    margin-right: 30px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .lightbox_image img {
+    width: 294px;
+    height: 416px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 30px;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .lightbox_image img {
+    width: 280px;
+    height: 416px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ligthbox_info {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-right: 50px;
+    width: 426px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ligthbox_info {
+    width: 300px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.film-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.16;
+
+  color: #000000;
+}
+
+.film-item {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  color: #8c8c8c;
+}
+
+.film-item__description {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  display: flex;
+  text-align: center;
+  margin-left: 100px;
+  color: #000000;
+}
+
+.film-item__description.popularity {
+  margin-left: 115px;
+}
+
+.film-item__vote {
+  background: #ff6b01;
+  border-radius: 5px;
+  width: 36px;
+  margin-right: 7px;
+}
+
+.film-item__votes {
+  background: #f7f7f7;
+  border-radius: 5px;
+  width: 36px;
+  margin-left: 7px;
+}
+
+.film-description__title {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.film-description__about {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+  color: #000000;
+}
+
+.film-buttons {
+  margin-top: 20px;
+  /* display: flex;
+  justify-content: space-around; */
+}
+
+.film-buttons button {
+  width: 136px;
+  height: 44px;
+  margin-right: 15px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 767px) {
+  .film-buttons button {
+    margin-right: 10px;
+  }
+}
+
+.film-buttons button:hover,
+.film-buttons button:focus {
+  background-color: #ff6b01;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-btn {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  color: white;
 }

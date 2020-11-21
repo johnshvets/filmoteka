@@ -8,6 +8,7 @@ import createMovieCardsTPL from './templates/movie-card.hbs';
 const mainContent = document.querySelector('main');
 const movieSearcher = new MovieApiService();
 
+
 getMovies();
 
 function setPage(page, pages) {
