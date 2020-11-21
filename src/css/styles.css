@@ -45,10 +45,11 @@ ul {
 .header {
   display: flex;
   height: 230px;
+  filter: brightness(56%);
 
   background: url('../img/header.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: auto;
 }
 
 .header__logo {
