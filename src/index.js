@@ -7,10 +7,10 @@ import './css/loader.css';
 import MovieApiService from './api/apiService';
 import createMovieCardsTPL from './templates/movie-card.hbs';
 
-const mainContent = document.querySelector('main');
-// const mainFilmContainer = document.querySelector('.movies-list');
+// const mainContent = document.querySelector('main');
+const mainFilmContainer = document.querySelector('main');
 
-mainContent.addEventListener('click', onOpenModal);
+mainFilmContainer.addEventListener('click', onOpenModal);
 
 const mainContent = document.querySelector('.main-js');
 const movieSearcher = new MovieApiService();
