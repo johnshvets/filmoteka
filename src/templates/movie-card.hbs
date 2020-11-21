@@ -1,10 +1,10 @@
-<ul>
-    {{#each}}
-    <li class="movie-card">
-        <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{original_title}}" id="{{id}}"
-            class="movie-picture">
-        <h2 class="movie-title">{{original_title}}</h2>
-        <p class="movie-genre">{{genres.name}} | {{release_date}}</p>
-    </li>
-    {{/each}}
+<ul class="movies-list">
+  {{#each this}}
+  <li class="movie-card">
+    <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{original_title}}" id="{{id}}"
+      class="movie-picture">
+    <h2 class="movie-title">{{original_title}}</h2>
+    <p class="movie-genre">{{#each genre_names}}{{this}} {{/each}}| {{release_date}}</p>
+  </li>
+  {{/each}}
 </ul>
