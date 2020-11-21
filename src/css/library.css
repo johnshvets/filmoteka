@@ -43,10 +43,11 @@ ul {
 .header {
   display: flex;
   height: 230px;
-
+  width: 100%;
   background: url('../img/library.jpg');
+  filter: brightness(56%);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: auto;
 }
 
 .header__logo {
@@ -242,6 +243,7 @@ ul {
   text-align: center;
 
   color: #545454;
+  background-color: #f7f7f7;
 }
 
 @media screen and (min-width: 768px) {
@@ -260,6 +262,7 @@ ul {
 
 @media screen and (min-width: 319px) {
   .footer__p {
+    margin-left: 50px;
     margin-left: 50px;
   }
 }
