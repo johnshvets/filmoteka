@@ -1,7 +1,9 @@
 import './styles.css';
 import { onOpenModal } from './js/modal';
-import './css/loader.css';
 import './css/styles.css';
+import './js/modal';
+import './css/loader.css';
+// import './js/library-watched-queue';
 import MovieApiService from './api/apiService';
 import createMovieCardsTPL from './templates/movie-card.hbs';
 
@@ -10,6 +12,7 @@ const mainContent = document.querySelector('main');
 
 mainContent.addEventListener('click', onOpenModal);
 
+const mainContent = document.querySelector('.main-js');
 const movieSearcher = new MovieApiService();
 
 
@@ -26,7 +29,7 @@ async function getMovies() {
       movieSearcher.fetchTrendingMovies.bind(movieSearcher),
       setPage,
     );
-
+    console.log(movies);
     mainContent.innerHTML = createMovieCardsTPL(movies);
   } catch (error) {
     console.log(error);
