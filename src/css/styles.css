@@ -202,22 +202,34 @@ ul {
 }
 
 .footer {
+  height: 77px;
   justify-content: center;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 1.18;
 
+  display: flex;
   align-items: center;
   text-align: center;
 
   color: #545454;
+  background: #f7f7f7;
 }
 
 @media screen and (min-width: 768px) {
   .footer {
     display: flex;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
   }
 }
 
@@ -230,7 +242,7 @@ ul {
 
 @media screen and (min-width: 319px) {
   .footer__p {
-    margin-left: 50px;
+    margin-left: 20px;
   }
 }
 
@@ -371,15 +383,17 @@ ul {
 }
 
 .movie-vote {
+  display: inline-block;
+  text-align: center;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.16;
-  margin-left: 16px;
+  margin-left: 5px;
   color: white;
 
   background: #ff6b01;
   border-radius: 5px;
-  width: 36px;
+  width: 26px;
 }
 
 li {

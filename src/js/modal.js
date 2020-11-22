@@ -2,7 +2,7 @@ import '../css/modal.css';
 import Api from '../api/apiService';
 import filmCardTpl from '../templates/modal.hbs';
 // подвязка к кнопке на боди просто для примера (удалить)
-let movie = {};
+// let movie = {};
 const refs = {
   // modalOpen: document.querySelector('.show-modal'),
   modalClose: document.querySelector('.lightbox_button'),
@@ -188,6 +188,6 @@ function onCloseClickOverlay(evt) {
 }
 
 async function getMovie(id) {
-  movie = await instance.fetchMovieByID(id);
+  const movie = await instance.fetchMovieByID(id);
   renderModal(movie);
 }
