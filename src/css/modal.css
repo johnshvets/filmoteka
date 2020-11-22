@@ -77,8 +77,8 @@ body {
 
 .lightbox_button {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 2px;
+  right: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,8 +106,8 @@ body {
 
 @media screen and (max-width: 767px) {
   .lightbox_button {
-    top: 5px;
-    right: 5px;
+    top: 35px;
+    right: 0;
   }
 }
 
@@ -135,19 +135,19 @@ body {
 
 @media screen and (max-width: 1024px) {
   .lightbox_content {
-    width: 980px;
+    width: 984px;
     height: 600px;
     top: 10%;
-    left: 8%;
+    left: 20px;
   }
 }
 
 @media screen and (max-width: 1023px) {
   .lightbox_content {
-    width: 760px;
+    width: 747px;
     height: 500px;
     top: 10%;
-    left: 8%;
+    left: 10px;
   }
 }
 
@@ -158,7 +158,7 @@ body {
     display: flex;
     flex-direction: column;
     top: 10%;
-    left: 10%;
+    left: 0;
   }
 }
 
@@ -212,7 +212,7 @@ body {
   .lightbox_image img {
     width: 280px;
     height: 416px;
-    margin-top: 20px;
+    margin-top: 0;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -273,6 +273,10 @@ body {
 
 .film-item__description.popularity {
   margin-left: 115px;
+}
+
+.film-item__description.genre {
+  margin-left: 133px;
 }
 
 .film-item__vote {
