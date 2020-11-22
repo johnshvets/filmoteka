@@ -1,4 +1,5 @@
 import './styles.css';
+// import './js/local-storage';
 import { onOpenModal } from './js/modal';
 import './css/styles.css';
 import './js/modal';
