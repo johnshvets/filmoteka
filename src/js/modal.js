@@ -12,8 +12,6 @@ const refs = {
   body: document.querySelector('body'),
 };
 
-
-
 // console.log(refs.mainFilmContainer);
 
 // refs.mainFilmContainer.addEventListener('click', onOpenModal);
@@ -71,112 +69,17 @@ function renderModal(movie) {
       return;
     }
   });
-  // console.log(addToWatching);
-  // console.log(addToQueue);
 
   if (addToWatching && addToQueue) {
     markup;
   }
-  }
-  //--------------------------жесть---------------------
-  
-// const addToQueueMovieBtn = document.querySelector('.film-buttons__queue');
-//   addToQueueMovieBtn.addEventListener('click', addToQueue1);
-//   const addToWatchedMovieBtn = document.querySelector('.film-buttons__watched');
-//   addToWatchedMovieBtn.addEventListener('click', addToWatched1);
-  //--------------------------------
-  //функция добавления и удаления объекта фильма в localStorage для Queue
-  // function addToQueue1() {
-  //   let queueMovieArr = [];
-  //   let localStorageData = localStorage.getItem('queueMovieArr');
-  //   if (localStorageData) {
-  //     queueMovieArr.push(...JSON.parse(localStorageData));
-  //   }
-  //   if (queueMovieArr.find(el => el.name === movie.name)) {
-  //     queueMovieArr = queueMovieArr.filter(el => el.name !== movie.name);
-  //   } else {
-  //     queueMovieArr.push(movie);
-  //   }
-  //   localStorage.setItem('queueMovieArr', JSON.stringify(queueMovieArr));
-  //   changeAddQueueBtnTextContent();
-  // }
-
-  //----------------------------------
-  //функция добавления и удаления объекта фильма в localStorage для Queue
-  // function addToWatched1() {
-  //   let watchedMovieArr = [];
-  //   let localStorageData = localStorage.getItem('watchedMovieArr');
-  //   if (localStorageData) {
-  //     watchedMovieArr.push(...JSON.parse(localStorageData));
-  //   }
-  //   if (watchedMovieArr.find(el => el.name === movie.name)) {
-  //     watchedMovieArr = watchedMovieArr.filter(el => el.name !== movie.name);
-  //   } else {
-  //     watchedMovieArr.push(movie);
-  //   }
-  //   localStorage.setItem('watchedMovieArr', JSON.stringify(watchedMovieArr));
-  //   changeAddWatchedBtnTextContent();
-  // }
-
-  // проверка актуальности текстконтента кнопок
-  //-----------Queued--------
-  // let localStorageQueuedData = localStorage.getItem('queueMovieArr');
-  // if (JSON.parse(localStorageQueuedData).length > 0) {
-  //   addToQueueMovieBtn.textContent = 'Delete from Queue';
-  //   addToQueueMovieBtn.classList.add('delete-movie');
-  // } else {
-  //   addToQueueMovieBtn.textContent = 'Add to Queue';
-  //   addToQueueMovieBtn.classList.remove('delete-movie');
-  // }
-
-  //-----------Watched-------
-  // let localStorageWatchedData = localStorage.getItem('watchedMovieArr');
-  // if (JSON.parse(localStorageWatchedData).length > 0) {
-  //   addToWatchedMovieBtn.textContent = 'Delete from Watched';
-  //   addToWatchedMovieBtn.classList.add('delete-movie');
-  // } else {
-  //   addToWatchedMovieBtn.textContent = 'Add to Watched';
-  //   addToWatchedMovieBtn.classList.remove('delete-movie');
-  // }
-
-  //-------------------------
-  // функция изменения текстконтента и цсс класса кнопок Queue
-  // function changeAddQueueBtnTextContent() {
-  //   let localStorageQueueData = localStorage.getItem('queueMovieArr');
-  //   if (JSON.parse(localStorageQueueData).find(el => el.name === movie.name)) {
-  //     addToQueueMovieBtn.textContent = 'Delete from Queue';
-  //     addToQueueMovieBtn.classList.add('delete-movie');
-  //   } else {
-  //     addToQueueMovieBtn.textContent = 'Add to Queue';
-  //     addToQueueMovieBtn.classList.remove('delete-movie');
-  //   }
-  // }
-  //--------------------------
-  // функция изменения текстконтента и цсс класса кнопок Watched
-  // function changeAddWatchedBtnTextContent() {
-  //   let localStorageWatchedData = localStorage.getItem('watchedMovieArr');
-  //   if (
-  //     JSON.parse(localStorageWatchedData).find(el => el.name === movie.name)
-  //   ) {
-  //     addToWatchedMovieBtn.textContent = 'Delete from Watched';
-  //     addToWatchedMovieBtn.classList.add('delete-movie');
-  //   } else {
-  //     addToWatchedMovieBtn.textContent = 'Add to Watched';
-  //     addToWatchedMovieBtn.classList.remove('delete-movie');
-  //   }
-  // }
-
-  //--------------------------жесть---------------------
-
+}
 
 function onCloseModal() {
   window.removeEventListener('keydown', onCloseEscPress);
   refs.overlay.removeEventListener('click', onCloseClickOverlay);
   refs.modalWindow.classList.remove('is-open');
   refs.body.classList.remove('modal-open');
-
-  // addToQueueMovieBtn.removeEventListener('click', addToQueue1);
-  // addToWatchedMovieBtn.removeEventListener('click', addToWatched1);
 }
 
 function onCloseEscPress(evt) {
