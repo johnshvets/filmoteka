@@ -49,6 +49,7 @@ module.exports = env => ({
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true,
       },
+      chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
       filename: 'library.html',
