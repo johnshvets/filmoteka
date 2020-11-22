@@ -3,6 +3,11 @@ import Api from '../api/apiService';
 import filmCardTpl from '../templates/modal.hbs';
 // подвязка к кнопке на боди просто для примера (удалить)
 
+// const addToQueueMovieBtn = document.querySelector('.film-buttons__queue');
+// addToQueueMovieBtn.addEventListener('click', addToQueue);
+// const addToWatchedMovieBtn = document.querySelector('.film-buttons__watched');
+// addToWatchedMovieBtn.addEventListener('click', addToWatched);
+
 const refs = {
   // modalOpen: document.querySelector('.show-modal'),
   modalClose: document.querySelector('.lightbox_button'),
