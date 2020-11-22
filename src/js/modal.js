@@ -43,6 +43,7 @@ export function onOpenModal(e) {
 //     }
 
 // }
+let currentId = 0;
 
 function renderModal(movie) {
   //
