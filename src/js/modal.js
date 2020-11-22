@@ -1,21 +1,13 @@
 import '../css/modal.css';
 import Api from '../api/apiService';
 import filmCardTpl from '../templates/modal.hbs';
-// подвязка к кнопке на боди просто для примера (удалить)
-
-// const addToQueueMovieBtn = document.querySelector('.film-buttons__queue');
-// addToQueueMovieBtn.addEventListener('click', addToQueue);
-// const addToWatchedMovieBtn = document.querySelector('.film-buttons__watched');
-// addToWatchedMovieBtn.addEventListener('click', addToWatched);
 
 const refs = {
-  // modalOpen: document.querySelector('.show-modal'),
   modalClose: document.querySelector('.lightbox_button'),
   modalWindow: document.querySelector('.js-lightbox'),
   overlay: document.querySelector('.lightbox_overlay'),
   filmInfo: document.querySelector('.lightbox_content'),
   body: document.querySelector('body'),
-  // mainFilmContainer: document.getElementsByClassName('.movie-picture')
 };
 
 // console.log(refs.mainFilmContainer);
@@ -32,7 +24,6 @@ export function onOpenModal(e) {
   }
 
   const id = e.target.id;
-  console.log(id);
   getMovie(id);
 
   refs.modalWindow.classList.add('is-open');

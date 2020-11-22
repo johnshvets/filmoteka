@@ -40,14 +40,14 @@ ul {
   }
 }
 
-.header {
+.header-library {
   display: flex;
   height: 230px;
   /* width: 100%; */
   background: url('../img/library.jpg');
   filter: brightness(56%);
   background-repeat: no-repeat;
-  background-size: auto;
+  /* background-size: auto; */
 }
 
 .header__logo {
