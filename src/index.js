@@ -7,16 +7,11 @@ import './css/loader.css';
 import MovieApiService from './api/apiService';
 import createMovieCardsTPL from './templates/movie-card.hbs';
 
-// const mainContent = document.querySelector('main');
-const mainFilmContainer = document.querySelector('main');
-
-mainFilmContainer.addEventListener('click', onOpenModal);
-
 const mainContent = document.querySelector('.main-js');
 const movieSearcher = new MovieApiService();
 
-
 getMovies();
+mainContent.addEventListener('click', onOpenModal);
 
 function setPage(page, pages) {
   console.log(page);
