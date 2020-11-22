@@ -1,14 +1,11 @@
-{{!-- <ul class="movies-list"> --}}
-{{#each this}}
-<li class="movie-card">
-  <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" id="{{id}}" class="movie-picture">
-  <div class="movie-info">
-    <h2 class="movie-title">{{title}}</h2>
-    <p class="movie-genre">{{#each genre_names}}{{this}} {{/each}}| {{release_date}}
-      <span class="movie-vote">{{vote_average}}</span>
-    </p>
-
-  </div>
-</li>
-{{/each}}
-{{!-- </ul> --}}
+<ul class="movies-list">
+  {{#each this}}
+  <li class="movie-card">
+    <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" id="{{id}}" class="movie-picture">
+    <div class="movie-info">
+      <h2 class="movie-title">{{title}}</h2>
+      <p class="movie-genre">{{#each genre_names}}{{this}} {{/each}}| {{release_date}}</p>
+    </div>
+  </li>
+  {{/each}}
+</ul>
