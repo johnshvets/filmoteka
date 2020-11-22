@@ -25,8 +25,9 @@
     </li>
     <li class="film-item">
       <p class="film-item__about">Genre</p>
-      <p class="film-item__description">{{#each genres}}
-        <span class="film-item__genre">{{name}}</span>
+      <p class="film-item__description genre">{{#each genres}}
+        <span class="film-item__genre">{{name}} <span style="color: #8C8C8C">/</span>
+        </span>
         {{/each}}
       </p>
     </li>

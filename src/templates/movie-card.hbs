@@ -4,7 +4,10 @@
   <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" id="{{id}}" class="movie-picture">
   <div class="movie-info">
     <h2 class="movie-title">{{title}}</h2>
-    <p class="movie-genre">{{#each genre_names}}{{this}} {{/each}}| {{release_date}}</p>
+    <p class="movie-genre">{{#each genre_names}}{{this}} {{/each}}| {{release_date}}
+      <span class="movie-vote">{{vote_average}}</span>
+    </p>
+
   </div>
 </li>
 {{/each}}
