@@ -1,6 +1,6 @@
 import './styles.css';
-import './css/pagination.css'
-// import './js/local-storage';
+import './css/pagination.css';
+import './js/local-storage';
 import { onOpenModal } from './js/modal';
 import './css/styles.css';
 import './js/modal';
