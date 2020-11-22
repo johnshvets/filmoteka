@@ -1,18 +1,6 @@
-// !!!!!!обьект для примера после пула - удалить!!!!!!!!
-const movieObj1 = {
-  name: 'film1',
-  length: 120,
-  genres: ['crime', 'drama'],
-};
-const movieObj2 = {
-  name: 'film2',
-  length: 122,
-  genre: ['crime'],
-};
-//--------------------------------!!!!!!ПОМЕНЯТЬ НА АКТУАЛЬНЫЕ СЕЛЕКТОРЫ!!!!!!!
-const addToQueueMovieBtn = document.querySelector('.add-queue-movie');
+const addToQueueMovieBtn = document.querySelector('.film-buttons__queue');
 addToQueueMovieBtn.addEventListener('click', addToQueue);
-const addToWatchedMovieBtn = document.querySelector('.add-watched-movie');
+const addToWatchedMovieBtn = document.querySelector('.film-buttons__watched');
 addToWatchedMovieBtn.addEventListener('click', addToWatched);
 
 //--------------------------------
