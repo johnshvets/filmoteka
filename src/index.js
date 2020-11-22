@@ -17,8 +17,8 @@ getMovies();
 refs.mainContent.addEventListener('click', onOpenModal);
 
 function setPage(page, pages) {
-  console.log(page);
-  console.log(pages);
+  // console.log(page);
+  // console.log(pages);
 }
 
 async function getMovies() {

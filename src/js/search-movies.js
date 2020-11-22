@@ -51,6 +51,6 @@ function clearContent() {
 }
 
 function setPage(page, pages) {
-  console.log(page);
-  console.log(pages);
+  // console.log(page);
+  // console.log(pages);
 }
