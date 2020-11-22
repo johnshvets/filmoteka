@@ -45,8 +45,7 @@ ul {
 .header {
   display: flex;
   height: 230px;
-  filter: brightness(56%);
-
+  background-color: rgba(0, 0, 0, 0.56);
   background: url('../img/header.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
