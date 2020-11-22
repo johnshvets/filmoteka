@@ -1,0 +1,70 @@
+.paginate {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 60px;
+  width: 100%;
+}
+
+.paginate .pagination-side:hover,
+.paginate .pagination-side:focus {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+
+.paginate ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.paginate li {
+  display: inline;
+}
+.paginate a {
+  border-radius: 3px;
+  margin: 1px 2px;
+  padding: 5px 10px;
+  display: inline-block;
+  text-decoration: none;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: black;
+}
+.paginate a:first-child,
+.paginate a.first {
+  margin-left: 0;
+}
+.paginate a:last-child,
+.paginate a.last {
+  margin-right: 0;
+}
+.paginate a:hover,
+.paginate a:focus {
+  border-color: #fff;
+  background-color: #ff6b08;
+}
+.paginate a.more {
+  border: 0 none;
+  background: transparent;
+  margin-left: 0;
+  margin-right: 0;
+}
+.paginate a.active {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: #ff6b08;
+  border-radius: 5px;
+}

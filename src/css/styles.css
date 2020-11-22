@@ -371,15 +371,17 @@ ul {
 }
 
 .movie-vote {
+  display: inline-block;
+  text-align: center;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.16;
-  margin-left: 16px;
+  margin-left: 5px;
   color: white;
 
   background: #ff6b01;
   border-radius: 5px;
-  width: 36px;
+  width: 26px;
 }
 
 li {
