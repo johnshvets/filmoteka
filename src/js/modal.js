@@ -1,16 +1,15 @@
 import '../css/modal.css';
 import Api from '../api/apiService';
 import filmCardTpl from '../templates/modal.hbs';
+
 // подвязка к кнопке на боди просто для примера (удалить)
 // let movie = {};
 const refs = {
-  // modalOpen: document.querySelector('.show-modal'),
   modalClose: document.querySelector('.lightbox_button'),
   modalWindow: document.querySelector('.js-lightbox'),
   overlay: document.querySelector('.lightbox_overlay'),
   filmInfo: document.querySelector('.lightbox_content'),
   body: document.querySelector('body'),
-  // mainFilmContainer: document.getElementsByClassName('.movie-picture')
 };
 
 // console.log(refs.mainFilmContainer);
