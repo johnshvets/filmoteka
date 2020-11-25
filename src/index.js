@@ -10,6 +10,7 @@ import './js/search-movies';
 import MovieApiService from './api/apiService';
 import createMovieCardsTPL from './templates/movie-card.hbs';
 import refs from './js/refs';
+import loader from './js/loader';
 
 const movieSearcher = new MovieApiService();
 
@@ -23,11 +24,13 @@ function setPage(page, pages) {
 
 async function getMovies() {
   try {
+    loader();
     const movies = await movieSearcher.fetchMovies(
       movieSearcher.fetchTrendingMovies.bind(movieSearcher),
       setPage,
     );
 
+    loader();
     refs.mainContent.innerHTML = createMovieCardsTPL(movies);
   } catch (error) {
     console.log(error);
