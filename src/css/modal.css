@@ -96,6 +96,50 @@ body {
   }
 }
 
+/* .lightbox_background {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.1;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 200ms ease-in-out;
+}
+
+@media screen and (min-width: 1025px) {
+  .lightbox_background {
+    width: 1100px;
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .lightbox_background {
+    width: 984px;
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .lightbox_background {
+    width: 747px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .lightbox_background {
+    width: 320px;
+    height: 1020px;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, -50%) scale(1);
+  }
+} */
+
 .lightbox_content {
   position: absolute;
   display: flex;
@@ -138,50 +182,6 @@ body {
     display: flex;
     flex-direction: column;
     transform: translate(-50%, -25%) scale(1);
-  }
-}
-
-.lightbox_background {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.1;
-  pointer-events: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 200ms ease-in-out;
-}
-
-@media screen and (min-width: 1025px) {
-  .lightbox_background {
-    width: 1100px;
-    height: 600px;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .lightbox_background {
-    width: 984px;
-    height: 600px;
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .lightbox_background {
-    width: 747px;
-    height: 500px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .lightbox_background {
-    width: 320px;
-    height: 1020px;
-    display: flex;
-    flex-direction: column;
-    transform: translate(-50%, -50%) scale(1);
   }
 }
 
