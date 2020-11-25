@@ -1,6 +1,4 @@
-
 import '../css/loader.css';
+import refs from './refs';
 
-const loaderRef = document.querySelector('.loader')
-
-loaderRef.classList.toggle('is-hidden');
+export default () => refs.loader.classList.toggle('is-hidden');
