@@ -19,14 +19,12 @@ const refs = {
 const instance = new Api();
 
 export function onOpenModal(e) {
-  // e.preventDefault();
 
   if (e.target.tagName !== 'IMG') {
     return;
   }
 
   const id = e.target.id;
-  // console.log(id);
   getMovie(id);
 
   refs.modalWindow.classList.add('is-open');
