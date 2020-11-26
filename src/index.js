@@ -40,13 +40,13 @@ export function renderModal(movie, id) {
 // 
 async function getMovies() {
   try {
-    loader();
+    loader.loader.show();
     const movies = await movieSearcher.fetchMovies(
       movieSearcher.fetchTrendingMovies.bind(movieSearcher),
       setPage,
     );
 
-    loader();
+    loader.loader.close();
     refs.mainContent.innerHTML = createMovieCardsTPL(movies);
   } catch (error) {
     console.log(error);
