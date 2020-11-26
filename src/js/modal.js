@@ -1,6 +1,9 @@
 import '../css/modal.css';
+import * as basicLightbox from "basiclightbox";
+import "basiclightbox/dist/basicLightbox.min.css";
 import Api from '../api/apiService';
 import filmCardTpl from '../templates/modal.hbs';
+import { renderModal } from '../index';
 
 // подвязка к кнопке на боди просто для примера (удалить)
 // let movie = {};
@@ -34,46 +37,70 @@ export function onOpenModal(e) {
   // const currentMovie = movie;
 }
 
-// function OnOpenModalbyImgClick(e) {
+// let id;
+//   const trailerBtn = document.querySelector('[data-name="trailer"]');
+//   trailerBtn.addEventListener('click', () => {
+//     toShowTrailer(id);
+//   });
 
-//     if (e.target.tagName === 'IMG') {
-//         onOpenModal(e.target.dataset.id)
-//     }
+//   console.log(trailerBtn);
 
-// }
-let currentId = 0;
 
-function renderModal(movie) {
-  //
-  const markup = filmCardTpl(movie);
-  refs.filmInfo.innerHTML = markup;
-  let addToWatching = 0;
-  let addToQueue = 0;
-  let arrW = JSON.parse(localStorage.getItem('watchedMovieArr')) || [];
-  let arrQ = JSON.parse(localStorage.getItem('queueMovieArr')) || [];
 
-  arrW.forEach(el => {
-    if (JSON.stringify(el) === JSON.stringify(currentId)) {
-      addToWatching++;
-    } else {
-      return;
-    }
-  });
+export function toShowTrailer(id) {
+  const ApiKey = 'd3b4e2b6590fadf64c27140207cd1cc0';
 
-  arrQ.forEach(el => {
-    if (JSON.stringify(el) === JSON.stringify(currentId)) {
-      addToQueue++;
-    } else {
-      return;
-    }
-  });
+  const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${ApiKey}&language=en-US`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      const id = data.results[0].key;
+      const instanceTrailer = basicLightbox.create(`<iframe width="560" height="315" src='https://www.youtube.com/embed/${id}'frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
+      instanceTrailer.show();
 
-  if (addToWatching && addToQueue) {
-    markup;
-  }
+    })
+    .catch(() => {
+      const instanceTrailer = basicLightbox.create(`<iframe width="560" height="315" src='https://www.youtube.com/embed/zwBpUdZ0lrQ'frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
+      instanceTrailer.show();
+    })
 }
 
-function onCloseModal() {
+
+let currentId = 0;
+
+//  export function renderModal(movie) {
+  
+//   const markup = filmCardTpl(movie);
+//   refs.filmInfo.innerHTML = markup;
+  // let addToWatching = 0;
+  // let addToQueue = 0;
+  // let arrW = JSON.parse(localStorage.getItem('watchedMovieArr')) || [];
+  // let arrQ = JSON.parse(localStorage.getItem('queueMovieArr')) || [];
+
+  // arrW.forEach(el => {
+  //   if (JSON.stringify(el) === JSON.stringify(currentId)) {
+  //     addToWatching++;
+  //   } else {
+  //     return;
+  //   }
+  // });
+
+  // arrQ.forEach(el => {
+  //   if (JSON.stringify(el) === JSON.stringify(currentId)) {
+  //     addToQueue++;
+  //   } else {
+  //     return;
+  //   }
+  // });
+
+  // if (addToWatching && addToQueue) {
+  //   markup;
+  // }
+// }
+
+  
+
+export function onCloseModal() {
   window.removeEventListener('keydown', onCloseEscPress);
   refs.overlay.removeEventListener('click', onCloseClickOverlay);
   refs.modalWindow.classList.remove('is-open');
@@ -94,5 +121,5 @@ function onCloseClickOverlay(evt) {
 
 async function getMovie(id) {
   const movie = await instance.fetchMovieByID(id);
-  renderModal(movie);
+  renderModal(movie, id);
 }

@@ -189,6 +189,10 @@ body {
   transform: scale(1);
 } */
 
+.lightbox_image {
+  position: relative;
+}
+
 @media screen and (min-width: 1024px) {
   .lightbox_image img {
     width: 350px;
@@ -214,6 +218,26 @@ body {
     margin-top: 0;
     margin-left: 10px;
     margin-right: 10px;
+  }
+}
+
+.trailer-btn {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  /* right: 0; */
+  width: 150px;
+  /* width: 500px; */
+  height: 40px;
+  border: none;
+  color: #ff6b01;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 767px) {
+  .trailer-btn {
+    top: 0;
+    right: 3%;
   }
 }
 

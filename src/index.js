@@ -2,6 +2,7 @@ import './styles.css';
 import './css/pagination.css';
 import './js/local-storage';
 import { onOpenModal } from './js/modal';
+import { toShowTrailer } from './js/modal';
 import './css/styles.css';
 import './js/modal';
 import './css/loader.css';
@@ -9,6 +10,7 @@ import './js/search-movies';
 // import './js/library-watched-queue';
 import MovieApiService from './api/apiService';
 import createMovieCardsTPL from './templates/movie-card.hbs';
+import filmCardTpl from './templates/modal.hbs';
 import refs from './js/refs';
 import loader from './js/loader';
 
@@ -22,6 +24,20 @@ function setPage(page, pages) {
   // console.log(pages);
 }
 
+// Рендер модалки
+export function renderModal(movie, id) {
+  
+  const markup = filmCardTpl(movie);
+  refs.filmInfo.innerHTML = markup;
+
+  const trailerBtn = document.querySelector('[data-name="trailer"]');
+  trailerBtn.addEventListener('click', () => {
+    toShowTrailer(id);
+  });
+
+  console.log(trailerBtn);
+}
+// 
 async function getMovies() {
   try {
     loader();
