@@ -1,80 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Filmoteka</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Filmoteka</title>
+  <body>
+    <header class="header">
+      <div class="conteiner header">
+        <div class="nav-top">
+          <a href="./index.html" class="logo">
+            <img src="./img/film.svg" alt="logo" class="header__logo" />
+            <span class="header__label">Filmoteka</span>
+          </a>
+          <nav>
+            <ul class="header__navigation">
+              <li class="nav__item">
+                <a href="./index.html" class="nav__link active">Home</a>
+              </li>
+              <li class="nav__item">
+                <a href="./library.html" class="nav__link">MY LIBRARY</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <form class="header__search form-js">
+          <input placeholder="Поиск фильмов" class="header__input input-js" />
+          <span class="search-icon"></span>
+        </form>
+      </div>
+    </header>
 
-</head>
+    <main class="container main-js"></main>
 
-<body>
+    <!-- Pagination -->
 
-  <header>
-    <div class="conteiner header">
-      <a href="./index.html"><img src="./img/film.svg" alt="film tape" class="header__logo"></a>
-      <p class="header__label">Filmoteka</p>
-      <form class="header__search form-js">
-        <input placeholder="Поиск фильмов" class="header__input input-js">
-        <img src="./img/search.svg" alt="">
-      </form>
-      <ul class="header__navigation">
-        <li class="nav__item"><a href="./index.html" class="nav__link active">Home</a></li>
-        <li class="nav__item"><a href="./library.html" class="nav__link">MY LIBRARY</a></li>
+    <div class="paginate">
+      <ul>
+        <li><a class="pagination-side" href="">&lang;</a></li>
+        <li><a href="">1</a></li>
+        <li><a href="" class="inactive">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="" class="active">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="" class="more">&hellip;</a></li>
+        <li><a href="">100</a></li>
+        <li><a class="pagination-side" href="">&rang;</a></li>
       </ul>
     </div>
-  </header>
 
-
-  <main class="container main-js">
-    
-  </main>
-
-  <!-- Pagination -->
-  
-  <div class="paginate">
-    <ul>
-      <li><a class="pagination-side" href="">&lang;</a></li>
-      <li><a href="">1</a></li>
-      <li><a href="" class="inactive">2</a></li>
-      <li><a href="">3</a></li>
-      <li><a href="" class="active">4</a></li>
-      <li><a href="">5</a></li>
-      <li><a href="" class="more">&hellip;</a></li>
-      <li><a href="">100</a></li>
-      <li><a class="pagination-side" href="">&rang;</a></li>
-    </ul>
-  </div>
-
-  <!-- modal -->
-  <div class="lightbox js-lightbox">
-    <div class="lightbox_overlay">
-      <div class="lightbox_content">
-      </div>
-      <button type="button" class="lightbox_button" data-action="close-lightbox"></button>
-    </div>
-
-  </div>
-
-  
-
-  <footer>
-    <div class="conteiner footer">
-      <p>© 2020 | All Rights Reserved |</p>
-      <div class="footer__div">
-        <p class="footer__p"> Developed with</p>
-        <img src="./img/Vector.svg" alt="" class="footer__img">
-       <p>by GoIT Students</p>
+    <!-- modal -->
+    <div class="lightbox js-lightbox">
+      <div class="lightbox_overlay">
+        <div class="lightbox_content"></div>
+        <button
+          type="button"
+          class="lightbox_button"
+          data-action="close-lightbox"
+        ></button>
       </div>
     </div>
-  </footer>
 
- 
-  
-
-  
-
-
-</body>
+    <footer class="footer">
+      <div class="conteiner">
+        <div class="footer__div">
+          <p class="footer-top">© 2020 | All Rights Reserved |</p>
+          <p class="footer__p">&nbsp;Developed with 🧡 by GoIT Students</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
